@@ -29,7 +29,7 @@
             <div class="score-board">
                 <div id="winning-label" class="badge">Wins</div>
                 <div id="losses-label" class="badge">Losses</div>
-                <span id="win-counter">0</span>:<span id="loss-counter">0</span>
+                <span id="win-counter">0</span>:<span id="lost-counter">0</span>
                 <div id="spacer1">
                     <div id="guesses-left-label" class="badge1 font-weight-bold text-uppercase">Guesses left</div>
                     <div id="guesses-left">:9</div>
@@ -83,7 +83,7 @@
     </div>
 
     <p id="action-message">Make_your_move</p>
-    <div class='row justify-content-center'>
+    <div class='row '>
 
             <div class="col-md-3"></div>
     
@@ -135,12 +135,14 @@
     
         </div>
     
-    <script type="text/javascript" src="./logic.js"></script>
+    
     <div class="row">
         <div class="col-md-12 fixed-bottom">
-            <footer id="guesses-left"></footer>
+            <footer id="wrong-guesses"></footer>
         </div>
     </div>
+
+    <script type="text/javascript" src="./logic.js"></script>
 </body>
 
 </html>
