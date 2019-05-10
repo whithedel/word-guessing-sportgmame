@@ -138,10 +138,12 @@ function startNewRound(theRound) {
     if (won) {
         theRound.wins+=1;
         alert('Excellent you won!!\uD83D\uDE00 the word is '+theRound.round.word);
+       
     }
     else if(lost) {
         theRound.losses+=1;
-        alert(theRound.round.word);
+        alert('Don\'t be a quiter try again! the word is '+theRound.round.word);
+       
     }
 
     };
@@ -158,11 +160,11 @@ var myGame = setupGame(gameWords,0,0);
 
 //Adding my logic to my html pages
 
-document.getElementById('puzzle-state').innerHTML= (myGame.round.puzzleState.join(' '));
-document.getElementById('wrong-guesses').innerHTML ="Wrong Guesses: " + myGame.round.wrongGuesses;
-document.getElementById('guesses-left').innerHTML ="Guesses Left: " + myGame.round.guessesLeft; 
-document.getElementById('winning-label').innerHTML = "Wins: " + myGame.wins;
-document.getElementById('losses-label').innerHTML ="Losses: " + myGame.losses;
+document.getElementById('puzzle-state').innerHTML=myGame.round.puzzleState.join(' ');
+document.getElementById('wrong-guesses').innerHTML="Wrong Guesses: " + myGame.round.wrongGuesses;
+document.getElementById('guesses-left').innerHTML="Guesses Left: " + myGame.round.guessesLeft; 
+// document.getElementById('win-counter').innerHTML=myGame.wins;
+// document.getElementById('lost-counter').innerHTML=myGame.losses;
 
 
 
@@ -178,13 +180,22 @@ document.onkeyup = function(event) {
         document.getElementById("wrong-guesses").innerHTML = "Wrong Guesses: " + myGame.round.wrongGuesses;
         document.getElementById("guesses-left").innerHTML = "Guesses Left: " + myGame.round.guessesLeft;
     } else {
-         startNewRound(myGame); 
-         document.getElementById("win-counter").innerHTML = "Wins: " + myGame.wins;
-         document.getElementById("loss-counter").innerHTML = "Losses: " + myGame.losses;
-        //  reset();
+         
+         document.getElementById("win-counter").innerHTML =myGame.wins;
+         document.getElementById("lost-counter").innerHTML =myGame.losses;
+         reset();
     }
 }
 
-
+//****** Code to Reset the Game ********
+function reset() {
+    myGame.round.guessesLeft = 0;
+    hasLost(myGame.round.guessesLeft);
+        if (isEndOfRound(myGame.round)) {
+            myGame = startNewRound(myGame);
+            myGame.round = setupRound(randomWord(gameWords));
+        }
+    updateHTML();
+}; 
 
 
