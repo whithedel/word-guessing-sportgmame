@@ -183,19 +183,19 @@ document.onkeyup = function(event) {
          startNewRound(myGame);
          document.getElementById("win-counter").innerHTML =myGame.wins;
          document.getElementById("lost-counter").innerHTML =myGame.losses;
-         reset();
+//          reset();
     }
 }
 
-//****** Code to Reset the Game ********
-function reset() {
-    myGame.round.guessesLeft = 0;
-    hasLost(myGame.round.guessesLeft);
-        if (isEndOfRound(myGame.round)) {
-            myGame = startNewRound(myGame);
-            myGame.round = setupRound(randomWord(gameWords));
-        }
-    updateHTML();
-}; 
+// //****** Code to Reset the Game ********
+// function reset() {
+//     myGame.round.guessesLeft = 0;
+//     hasLost(myGame.round.guessesLeft);
+//         if (isEndOfRound(myGame.round)) {
+//             myGame = startNewRound(myGame);
+//             myGame.round = setupRound(randomWord(gameWords));
+//         }
+//     updateHTML();
+// }; 
 
 
