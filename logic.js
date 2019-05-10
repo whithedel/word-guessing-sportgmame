@@ -172,7 +172,7 @@ document.getElementById('guesses-left').innerHTML="Guesses Left: " + myGame.roun
 // adding the game logic 
 
 document.onkeyup = function(event) {
-    // playAudio();
+
     var keyPressed = String.fromCharCode(event.keyCode).toLowerCase();
     if (isEndOfRound(myGame.round) === false) {
         updateRound(myGame.round, keyPressed);
