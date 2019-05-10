@@ -146,5 +146,6 @@ footer {
     color: rgba(199, 199, 197, 0.993);
     font-size: 40px;
     font-weight: bold;
+    border: 1px solid white;
    
 }
