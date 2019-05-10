@@ -180,7 +180,7 @@ document.onkeyup = function(event) {
         document.getElementById("wrong-guesses").innerHTML = "Wrong Guesses: " + myGame.round.wrongGuesses;
         document.getElementById("guesses-left").innerHTML = "Guesses Left: " + myGame.round.guessesLeft;
     } else {
-         
+         startNewRound(myGame);
          document.getElementById("win-counter").innerHTML =myGame.wins;
          document.getElementById("lost-counter").innerHTML =myGame.losses;
          reset();
